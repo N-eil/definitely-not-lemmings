@@ -1,0 +1,248 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Levels/LevelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/FaderOverlay.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Tutorial.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Fader.png" type="Texture" id=4]
+[ext_resource path="res://Magic/FireCircle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Magic/LightningCircle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Magic/WindCircle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Magic/IceCircle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Obstacle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/DoorSystem.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Arrow.tscn" type="PackedScene" id=11]
+
+[node name="Level" instance=ExtResource( 1 )]
+z_index = 1
+script = ExtResource( 3 )
+
+[node name="TileMap" parent="." index="0"]
+tile_data = PoolIntArray( 1048589, 0, 0, 1114125, 0, 0, 1179661, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1835060, 0, 0, 1835061, 0, 0, 1835062, 0, 0, 1835063, 0, 0, 1835064, 0, 0, 1835065, 0, 0, 1835066, 0, 0, 1835067, 0, 0, 1835068, 0, 0, 1835069, 0, 0, 1835070, 0, 0, 1835071, 0, 0, 1900607, 0, 0, 1966143, 0, 0, 2031679, 0, 0, 2097215, 0, 0, 2162751, 0, 0, 2228287, 0, 0, 2293823, 0, 0, 2359296, 0, 0, 2359297, 0, 0, 2359298, 0, 0, 2359299, 0, 0, 2359300, 0, 0, 2359301, 0, 0, 2359302, 0, 0, 2359303, 0, 0, 2359304, 0, 0, 2359305, 0, 0, 2359306, 0, 0, 2359307, 0, 0, 2359308, 0, 0, 2359309, 0, 0, 2359310, 0, 0, 2359311, 0, 0, 2359312, 0, 0, 2359313, 0, 0, 2359314, 0, 0, 2359315, 0, 0, 2359316, 0, 0, 2359317, 0, 0, 2359318, 0, 0, 2359319, 0, 0, 2359320, 0, 0, 2359321, 0, 0, 2359322, 0, 0, 2359323, 0, 0, 2359324, 0, 0, 2359325, 0, 0, 2359326, 0, 0, 2359327, 0, 0, 2359328, 0, 0, 2359329, 0, 0, 2359330, 0, 0, 2359331, 0, 0, 2359332, 0, 0, 2359333, 0, 0, 2359334, 0, 0, 2359335, 0, 0, 2359336, 0, 0, 2359337, 0, 0, 2359338, 0, 0, 2359339, 0, 0, 2359340, 0, 0, 2359341, 0, 0, 2359342, 0, 0, 2359343, 0, 0, 2359344, 0, 0, 2359345, 0, 0, 2359346, 0, 0, 2359347, 0, 0, 2359348, 0, 0, 2359349, 0, 0, 2359350, 0, 0, 2359351, 0, 0, 2359352, 0, 0, 2359353, 0, 0, 2359354, 0, 0, 2359355, 0, 0, 2359356, 0, 0, 2359357, 0, 0, 2359358, 0, 0, 2359359, 0, 0 )
+
+[node name="Goal" parent="." index="1"]
+position = Vector2( 914.218, 538.319 )
+
+[node name="ShiokkoSpawner" parent="." index="3"]
+position = Vector2( 122.253, 266.781 )
+
+[node name="FireCircle" parent="." index="4" instance=ExtResource( 5 )]
+position = Vector2( 159.899, 543.757 )
+
+[node name="IceCircle" parent="." index="5" instance=ExtResource( 8 )]
+position = Vector2( 471.297, 543.757 )
+
+[node name="LightningCircle" parent="." index="6" instance=ExtResource( 6 )]
+position = Vector2( 371.175, 482.021 )
+script = null
+
+[node name="Obstacle" parent="." index="7" instance=ExtResource( 9 )]
+position = Vector2( 369.157, 555.625 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="WindCircle" parent="." index="8" instance=ExtResource( 7 )]
+position = Vector2( 262, 543.757 )
+
+[node name="DoorSystem" parent="." index="9" instance=ExtResource( 10 )]
+position = Vector2( 639.793, 549.414 )
+system_colour = Color( 0.988235, 0.0156863, 0.0156863, 1 )
+
+[node name="Button" parent="DoorSystem" index="0"]
+position = Vector2( 89.1906, 2.87103 )
+
+[node name="Door" parent="DoorSystem" index="1"]
+position = Vector2( 199.787, -30.9194 )
+scale = Vector2( 1.5, 3.5 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="10"]
+layer = 10
+
+[node name="FaderOverlay" type="Sprite" parent="CanvasLayer" index="0"]
+modulate = Color( 1, 1, 1, 0.54902 )
+position = Vector2( 1126.1, 418.026 )
+scale = Vector2( 0.8, 0.7 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+
+[node name="AllInstructions" type="Node2D" parent="CanvasLayer" index="1"]
+
+[node name="InstructionBox" type="Node2D" parent="CanvasLayer/AllInstructions" index="0"]
+visible = false
+position = Vector2( 233.769, 238.815 )
+
+[node name="Instruction" type="Label" parent="CanvasLayer/AllInstructions/InstructionBox" index="0"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 123.0
+margin_bottom = 72.0
+text = "Shiokkos will continually appear at the pentagram. "
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" parent="CanvasLayer/AllInstructions/InstructionBox" index="1" instance=ExtResource( 11 )]
+position = Vector2( 70.7579, 59.4605 )
+
+[node name="InstructionBox2" type="Node2D" parent="CanvasLayer/AllInstructions" index="1"]
+visible = false
+position = Vector2( 886.408, 468.751 )
+
+[node name="Instruction" type="Label" parent="CanvasLayer/AllInstructions/InstructionBox2" index="0"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 123.0
+margin_bottom = 72.0
+text = "Guide them back home!"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" parent="CanvasLayer/AllInstructions/InstructionBox2" index="1" instance=ExtResource( 11 )]
+position = Vector2( 70.7579, 43.0815 )
+
+[node name="InstructionBox3" type="Node2D" parent="CanvasLayer/AllInstructions" index="2"]
+visible = false
+position = Vector2( 44.3476, 412.881 )
+
+[node name="Instruction" type="Label" parent="CanvasLayer/AllInstructions/InstructionBox3" index="0"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 123.0
+margin_bottom = 72.0
+text = "Fire magic: Any Shiokko that touches it will run faster.  Can also thaw out frozen Shiokkos.
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" parent="CanvasLayer/AllInstructions/InstructionBox3" index="1" instance=ExtResource( 11 )]
+position = Vector2( 42.4097, 112.377 )
+
+[node name="InstructionBox4" type="Node2D" parent="CanvasLayer/AllInstructions" index="3"]
+visible = false
+position = Vector2( 193.243, 403.423 )
+
+[node name="Instruction" type="Label" parent="CanvasLayer/AllInstructions/InstructionBox4" index="0"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 123.0
+margin_bottom = 72.0
+text = "Wind magic: Any Shiokko that touches it will be launched into the air.
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" parent="CanvasLayer/AllInstructions/InstructionBox4" index="1" instance=ExtResource( 11 )]
+position = Vector2( 70.7579, 79.6192 )
+
+[node name="InstructionBox5" type="Node2D" parent="CanvasLayer/AllInstructions" index="4"]
+visible = false
+position = Vector2( 308.107, 361.01 )
+
+[node name="Instruction" type="Label" parent="CanvasLayer/AllInstructions/InstructionBox5" index="0"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 123.0
+margin_bottom = 72.0
+text = "Lightning magic: Shoots a lightning bolt downward that destroys objects.
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" parent="CanvasLayer/AllInstructions/InstructionBox5" index="1" instance=ExtResource( 11 )]
+position = Vector2( 82.7272, 78.3593 )
+
+[node name="InstructionBox6" type="Node2D" parent="CanvasLayer/AllInstructions" index="5"]
+visible = false
+position = Vector2( 422.332, 412.656 )
+
+[node name="Instruction" type="Label" parent="CanvasLayer/AllInstructions/InstructionBox6" index="0"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 123.0
+margin_bottom = 72.0
+text = "Ice magic: The first Shiokko to touch it becomes frozen in place.
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" parent="CanvasLayer/AllInstructions/InstructionBox6" index="1" instance=ExtResource( 11 )]
+position = Vector2( 70.7579, 77.7294 )
+
+[node name="InstructionBox9" type="Node2D" parent="CanvasLayer/AllInstructions" index="6"]
+visible = false
+position = Vector2( 647.692, 398.36 )
+
+[node name="Instruction" type="Label" parent="CanvasLayer/AllInstructions/InstructionBox9" index="0"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 168.0
+margin_bottom = 72.0
+text = "Open doors by getting a Shiokko to press the matching button.
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" parent="CanvasLayer/AllInstructions/InstructionBox9" index="1" instance=ExtResource( 11 )]
+position = Vector2( 146.439, 41.5708 )
+
+[node name="InstructionBox7" type="Node2D" parent="CanvasLayer/AllInstructions" index="7"]
+visible = false
+position = Vector2( 193.925, 507.088 )
+
+[node name="Instruction" type="Label" parent="CanvasLayer/AllInstructions/InstructionBox7" index="0"]
+margin_left = -62.0
+margin_top = 93.0
+margin_right = 110.0
+margin_bottom = 175.0
+text = "Click a spell at the bottom, then click the screen to place a magic circle.
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" parent="CanvasLayer/AllInstructions/InstructionBox7" index="1" instance=ExtResource( 11 )]
+position = Vector2( 46.2949, 153.869 )
+
+[node name="InstructionBox8" type="Node2D" parent="CanvasLayer/AllInstructions" index="8"]
+visible = false
+position = Vector2( 555.527, 585.264 )
+
+[node name="Instruction" type="Label" parent="CanvasLayer/AllInstructions/InstructionBox8" index="0"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 231.0
+margin_bottom = 122.0
+text = "
+Top: How many Shiokkos there are left in the pentagram.
+Bottom: How many Shiokkos need to make it home to finish the stage."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" parent="CanvasLayer/AllInstructions/InstructionBox8" index="1" instance=ExtResource( 11 )]
+position = Vector2( 147.279, 94.7781 )
+
+[connection signal="input_event" from="CanvasLayer/AllInstructions/InstructionBox/Arrow" to="CanvasLayer/FaderOverlay" method="_on_Arrow_input_event"]
+[connection signal="input_event" from="CanvasLayer/AllInstructions/InstructionBox2/Arrow" to="CanvasLayer/FaderOverlay" method="_on_Arrow_input_event"]
+[connection signal="input_event" from="CanvasLayer/AllInstructions/InstructionBox3/Arrow" to="CanvasLayer/FaderOverlay" method="_on_Arrow_input_event"]
+[connection signal="input_event" from="CanvasLayer/AllInstructions/InstructionBox4/Arrow" to="CanvasLayer/FaderOverlay" method="_on_Arrow_input_event"]
+[connection signal="input_event" from="CanvasLayer/AllInstructions/InstructionBox5/Arrow" to="CanvasLayer/FaderOverlay" method="_on_Arrow_input_event"]
+[connection signal="input_event" from="CanvasLayer/AllInstructions/InstructionBox6/Arrow" to="CanvasLayer/FaderOverlay" method="_on_Arrow_input_event"]
+[connection signal="input_event" from="CanvasLayer/AllInstructions/InstructionBox9/Arrow" to="CanvasLayer/FaderOverlay" method="_on_Arrow_input_event"]
+[connection signal="input_event" from="CanvasLayer/AllInstructions/InstructionBox7/Arrow" to="CanvasLayer/FaderOverlay" method="_on_Arrow_input_event"]
+[connection signal="input_event" from="CanvasLayer/AllInstructions/InstructionBox8/Arrow" to="CanvasLayer/FaderOverlay" method="_on_Arrow_input_event"]
+
+[editable path="DoorSystem"]
