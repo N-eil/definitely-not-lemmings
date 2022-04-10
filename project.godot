@@ -12,7 +12,6 @@ config_version=4
 
 config/name="Shion"
 run/main_scene="res://Playscreen.tscn"
-config/icon="res://icon.png"
 
 [autoload]
 
