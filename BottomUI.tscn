@@ -61,7 +61,7 @@ texture = ExtResource( 1 )
 margin_top = 82.0
 margin_right = 77.0
 margin_bottom = 96.0
-text = "FIRE (Z)"
+text = "FIRE"
 align = 1
 autowrap = true
 
@@ -81,7 +81,7 @@ texture = ExtResource( 3 )
 margin_top = 82.0
 margin_right = 77.0
 margin_bottom = 96.0
-text = "WIND (X)"
+text = "WIND"
 align = 1
 
 [node name="Lightning" type="VBoxContainer" parent="Bottomstuff/Hotbar"]
@@ -99,8 +99,8 @@ texture = ExtResource( 4 )
 [node name="Label" type="Label" parent="Bottomstuff/Hotbar/Lightning"]
 margin_top = 82.0
 margin_right = 77.0
-margin_bottom = 113.0
-text = "LIGHTNING (C)"
+margin_bottom = 96.0
+text = "LIGHTNING"
 align = 1
 autowrap = true
 
@@ -120,7 +120,7 @@ texture = ExtResource( 2 )
 margin_top = 82.0
 margin_right = 77.0
 margin_bottom = 96.0
-text = "ICE (V)"
+text = "ICE"
 align = 1
 
 [node name="Stats" type="VBoxContainer" parent="Bottomstuff"]

@@ -25,6 +25,7 @@ func spawn():
 # Called when the node enters the scene tree for the first time.
 func _ready():
     time_left = delay
+    get_parent().get_parent().shiokko_spawned(total_spawns - has_spawned)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

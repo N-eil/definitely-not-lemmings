@@ -26,6 +26,8 @@ func _ready():
     $ShiokkoSpawner.total_spawns = spawn_count
     bottom_border = $Line2D.transform.origin.y
     
+    get_parent().shiokko_arrived(0, count_to_win)
+    
 func _input(event):
     if not (event is InputEventMouseButton and event.pressed):
         return
