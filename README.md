@@ -1,2 +1,0 @@
-# definitely-not-lemmings
-shiokko
